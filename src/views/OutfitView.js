@@ -1,6 +1,4 @@
-define(function(require,exports, module){
-
-require('./styles');
+require('../styles');
 require('famous-polyfills');
 
 var Engine = require('famous/core/Engine');
@@ -10,7 +8,6 @@ var ImageSurface = require('famous/surfaces/ImageSurface');
 var Transitionable = require('famous/transitions/Transitionable');
 var Easing = require('famous/transitions/Easing');
 var View = require('famous/core/View');
-
 
 
 function OutfitView(){
@@ -219,6 +216,7 @@ function OutfitView(){
 OutfitView.prototype = Object.create(View.prototype);
 OutfitView.prototype.constructor = OutfitView;
 
+OutfitView.DEFAULT_OPTIONS = {};
+
 module.exports = OutfitView;
 
-});

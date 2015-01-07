@@ -1,6 +1,4 @@
-define(function(require,exports, module){
-
-require('./styles');
+require('../styles');
 require('famous-polyfills');
 
 var Engine = require('famous/core/Engine');
@@ -11,22 +9,23 @@ var Transitionable = require('famous/transitions/Transitionable');
 var Easing = require('famous/transitions/Easing');
 var View = require('famous/core/View');
 
-function ModelView(){
+function BgView(){
   View.apply(this, arguments);
-  // centered model
-  var centerModelMod = new Modifier({
+  
+  // centered background
+  var centerBgMod = new Modifier({
     align: [0.5, 0.5],
     origin: [0.5, 0.5]
   });
-  var model = new ImageSurface({
-    size: [114, 530],
-    content: 'images/model.svg'
+  var bg = new ImageSurface({
+    size: [400, 579],
+    content: 'images/bg.svg'
   });
-  this.add(centerModelMod).add(model);
+  this.add(centerBgMod).add(bg);
 }
-ModelView.prototype = Object.create(View.prototype);
-ModelView.prototype.constructor = ModelView;
+BgView.prototype = Object.create(View.prototype);
+BgView.prototype.constructor = BgView;
 
-module.exports = ModelView;
-});
+BgView.DEFAULT_OPTIONS = {};
 
+module.exports = BgView;
