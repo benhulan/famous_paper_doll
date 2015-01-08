@@ -1,36 +1,60 @@
-require('../styles');
-require('famous-polyfills');
 var data = require('../data.json');
 
 var Engine = require('famous/core/Engine');
 var Modifier = require('famous/core/Modifier');
-var Surface = require('famous/core/Surface');
 var Transform = require('famous/core/Transform');
 var ImageSurface = require('famous/surfaces/ImageSurface');
 var Transitionable = require('famous/transitions/Transitionable');
 var Easing = require('famous/transitions/Easing');
 var View = require('famous/core/View');
 
-function PantsView(){
+function PantsView(data){
 	View.apply(this, arguments);
-	var surface = new Surface();
+	//console.log('hi i am a pants');
+	
+	var pantsModifier = new Modifier({
+	align: [(data['align'][0]), (data['align'][1])],
+	origin: [(data['origin'][0]), (data['origin'][1])]
+	});
 
-	this.surface = surface;
-	this.subscribe(surface);
-	this.add(surface);
+	var pantsSurface = new ImageSurface({
+	size: [(data['size'][0]), (data['size'][1])],
+	content: data['content']
+	});	
+
+	this.alignStartX = data['align'][0];
+	this.alignStartY = data['align'][1];
+	// console.log(alignStartX, alignStartY);
+
+	this.pantsTransitionable = new Transitionable([this.alignStartX, this.alignStartY]);
+	pantsModifier.alignFrom(function() {
+		return this.pantsTransitionable.get();
+      	}.bind(this));
+
+	this.subscribe(pantsSurface);
+	this.add(pantsModifier).add(pantsSurface);
+
+  	this.isOn = false;	
 
 	this._eventInput.on('click', function() {
-	    console.log(this);
-	    this._eventOutput.emit('pantsViewClicked');
+	    this._eventOutput.emit('pantsViewClicked', this);
   	}.bind(this));
-  	this._changed = false;
 }
 
 PantsView.prototype = Object.create(View.prototype);
 PantsView.prototype.constructor = PantsView;
 
 PantsView.prototype.testing = function() {
-	console.log('pantsView made it to the test');
+	console.log('pantsView made test');
+};
+PantsView.prototype.slideOn = function(data) {
+	if (this.isOn){
+		this.pantsTransitionable.set([this.alignStartX, this.alignStartY], {duration: 3000});
+		this.isOn = false;
+	} else {
+		this.pantsTransitionable.set([0.501, 0.432], { duration: 3000 });
+		this.isOn = true;
+	}
 };
 
 PantsView.DEFAULT_OPTIONS = {};

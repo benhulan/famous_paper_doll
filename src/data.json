@@ -14,25 +14,25 @@
 	},
 	'blouse3': {
 		'align': [0.95, 0.15],
-		'origin': [0.5, 0],
-		'size': [100, 106],
+		'origin': [0.5, 0.03],
+		'size': [102, 106],
 		'content': 'images/blouse3.svg'
 	},
 	'shirt1':{
 		'align': [0.75, 0.325],
-		'origin': [0.5, 0],
+		'origin': [0.5, -0.05],
 		'size': [94, 112],
 		'content': 'images/shirt1.svg'
 	},
 	'shirt2': {
 		'align': [0.85, 0.325],
-		'origin': [0.5, 0],
+		'origin': [0.5, -0.05],
 		'size': [94, 112],
 		'content': 'images/shirt2.svg'
 	},
 	'shirt3': {
 		'align': [0.95, 0.325],
-		'origin': [0.5, 0],
+		'origin': [0.5, -0.05],
 		'size': [94, 112],
 		'content': 'images/shirt3.svg'
 	}
@@ -40,20 +40,20 @@
 'dresses': {
 	'dress1':{
 		'align': [0.1, 0.15],
-		'origin': [0.5, 0],
+		'origin': [0.5, -0.0225],
 		'size': [99, 179],
 		'content': 'images/dress1.svg'
 	},
 
 	'dress2':{
 		'align': [0.2, 0.15],
-		'origin': [0.5, 0],
+		'origin': [0.5, -0.0225],
 		'size': [99, 179],
 		'content': 'images/dress2.svg'
 	},
 	'dress3':{
 		'align': [0.3, 0.15],
-		'origin': [0.5, 0],
+		'origin': [0.5, -0.0225],
 		'size': [99, 179],
 		'content': 'images/dress3.svg'
 	}
@@ -67,44 +67,44 @@
 	},
 	'skirt2':{
 		'align': [0.2, 0.5],
-		'origin': [0.5, 0],
+		'origin': [0.5, 0.156],
 		'size': [121, 92],
 		'content': 'images/skirt2.svg'
 	},
 	'skirt3':{
 		'align': [0.3, 0.5],
-		'origin': [0.5, 0],
+		'origin': [0.5, 0.2],
 		'size': [90, 146],
 		'content': 'images/skirt3.svg'
 	},
 	'shorts1': {
 		'align': [0.75, 0.5],
-		'origin': [0.5, 0],
-		'size': [99, 55],
+		'origin': [0.5, 0.01],
+		'size': [103, 56],
 		'content':  'images/shorts1.svg'
 	},
 	'shorts2':{
 		'align': [0.75, 0.6],
-		'origin': [0.5, 0],
-		'size': [99, 55],
+		'origin': [0.5, 0.01],
+		'size': [103, 56],
 		'content':  'images/shorts2.svg'
 	},
 	'shorts3': {
 		'align': [0.75, 0.7],
-		'origin': [0.5, 0],
-		'size': [99, 55],
+		'origin': [0.5, 0.01],
+		'size': [103, 56],
 		'content':  'images/shorts3.svg'
 	},
 	'pants1': {
 		'align': [0.85, 0.5],
-		'origin': [0.5, 0],
-		'size': [86, 279],
+		'origin': [0.5, 0.01],
+		'size': [88, 277],
 		'content': 'images/pants1.svg'
 		},
 	'pants2': {
 		'align': [0.95, 0.5],
-		'origin': [0.5, 0],
-		'size': [86, 279],
+		'origin': [0.5, 0.01],
+		'size': [88, 277],
 		'content': 'images/pants2.svg'
 	}
 }}

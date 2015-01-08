@@ -200,21 +200,21 @@ function OutfitView(){
   this.add(pants2Mod).add(pants2);
 
   var topTransitionable = new Transitionable([0.75, 0.15]);
-  topTransitionable.set([0.5, 0.27], {duration: 5000 });
+  blouse1Mod.alignFrom(function() {
+    return topTransitionable.get();
+  });
 
   blouse1.on('click', function(){
-      blouse1Mod.alignFrom(function() {
-        return topTransitionable.get();
-      });
+      topTransitionable.set([0.5, 0.27], {duration: 5000 });
   });
 
   var bottomTransitionable = new Transitionable([0.1, 0.5]);
-  bottomTransitionable.set([0.5, 0.434], { duration: 5000 });
+  skirt1Mod.alignFrom(function(){
+    return bottomTransitionable.get();
+  });
 
   skirt1.on('click', function(){
-      skirt1Mod.alignFrom(function(){
-        return bottomTransitionable.get();
-      });
+      bottomTransitionable.set([0.5, 0.434], { duration: 5000 });
   });
 
 }
