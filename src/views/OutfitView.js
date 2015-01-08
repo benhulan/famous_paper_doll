@@ -13,18 +13,6 @@ var View = require('famous/core/View');
 function OutfitView(){
   View.apply(this, arguments);
 
-  // wearing top
-  var wearingTopMod = new Modifier({
-    align: [0.5, 0.28],
-    origin: [0.5, 0]
-  });
-
-  // wearing bottom
-  var wearingLowMod = new Modifier({
-    align: [0.5, 0.434],
-    origin: [0.5, 0]
-  });
-
   var blouse1Mod = new Modifier({
     align: [0.75, 0.15],
     origin: [0.5, 0]
@@ -209,8 +197,26 @@ function OutfitView(){
     size: [86, 279],
     content: 'images/pants2.svg'
   });
-
   this.add(pants2Mod).add(pants2);
+
+  var topTransitionable = new Transitionable([0.75, 0.15]);
+  topTransitionable.set([0.5, 0.27], {duration: 5000 });
+
+  blouse1.on('click', function(){
+      blouse1Mod.alignFrom(function() {
+        return topTransitionable.get();
+      });
+  });
+
+  var bottomTransitionable = new Transitionable([0.1, 0.5]);
+  bottomTransitionable.set([0.5, 0.434], { duration: 5000 });
+
+  skirt1.on('click', function(){
+      skirt1Mod.alignFrom(function(){
+        return bottomTransitionable.get();
+      });
+  });
+
 }
 
 OutfitView.prototype = Object.create(View.prototype);
