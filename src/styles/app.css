@@ -6,3 +6,7 @@ html {
   -webkit-backface-visibility: visible;
   backface-visibility: visible;
 }
+
+.top {
+	background-color: #446699;
+}

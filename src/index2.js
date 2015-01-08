@@ -1,8 +1,8 @@
 require('./styles');
 require('famous-polyfills');
-var BgView = require('./views/BgView');
-var ModelView = require('./views/ModelView');
-var ClothesView = require('./views/ClothesView');
+var BgView = require('./views/BgView.js');
+var ModelView = require('./views/ModelView.js');
+var OutfitView = require('./views/OutfitView.js');
 
 var Engine = require('famous/core/Engine');
 var Modifier = require('famous/core/Modifier');
@@ -20,15 +20,15 @@ function MainView(){
 
   var bgView = new BgView();
   var modelView = new ModelView();
-  var clothesView = new ClothesView();
+  var outfitView = new OutfitView();
 
   this.subscribe(bgView);
   this.subscribe(modelView);
-  this.subscribe(clothesView);
+  this.subscribe(outfitView);
 
   this.add(bgView);
   this.add(modelView);
-  this.add(clothesView);
+  this.add(outfitView);
 
   this._eventInput.on('click', function(){
     outfitView.swapModifiers();
