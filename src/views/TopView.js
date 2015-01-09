@@ -24,12 +24,12 @@ function TopView(data){
 	content: data['content']
 	});
 
-	this.alignStartX = data['align'][0];
-	this.alignStartY = data['align'][1];
-	// console.log(alignStartX, alignStartY);
+	this.originStartX = data['origin'][0];
+	this.originStartY = data['origin'][1];
+	// console.log(this.originStartX, this.originStartY);
 
-	this.topTransitionable = new Transitionable([this.alignStartX, this.alignStartY]);
-	topModifier.alignFrom(function() {
+	this.topTransitionable = new Transitionable([this.originStartX, this.originStartY]);
+	topModifier.originFrom(function() {
 		return this.topTransitionable.get();
       	}.bind(this));
 
@@ -49,12 +49,18 @@ TopView.prototype.constructor = TopView;
 TopView.prototype.testing = function() {
 	console.log('topView made it to the test');
 };
-TopView.prototype.slideOn = function(data) {
+TopView.prototype.change = function(data) {
 	if (this.isOn){
-		this.topTransitionable.set([this.alignStartX, this.alignStartY], {duration: 3000});
+		this.topTransitionable.set([this.originStartX, this.originStartY], {
+			duration: 1000,
+			curve: Easing.inCubic
+		});
 		this.isOn = false;
 	} else {
-		this.topTransitionable.set([0.5, 0.27], {duration: 3000 });
+		this.topTransitionable.set([0.5, 1.45], {   
+			duration: 1000,
+			curve: Easing.inCubic
+		});
 		this.isOn = true;
 	}
 };

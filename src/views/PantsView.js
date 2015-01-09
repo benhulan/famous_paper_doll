@@ -22,12 +22,12 @@ function PantsView(data){
 	content: data['content']
 	});	
 
-	this.alignStartX = data['align'][0];
-	this.alignStartY = data['align'][1];
-	// console.log(alignStartX, alignStartY);
+	this.originStartX = data['origin'][0];
+	this.originStartY = data['origin'][1];
+	// console.log(this.originStartX, this.originStartY);
 
-	this.pantsTransitionable = new Transitionable([this.alignStartX, this.alignStartY]);
-	pantsModifier.alignFrom(function() {
+	this.pantsTransitionable = new Transitionable([this.originStartX, this.originStartY]);
+	pantsModifier.originFrom(function() {
 		return this.pantsTransitionable.get();
       	}.bind(this));
 
@@ -47,12 +47,18 @@ PantsView.prototype.constructor = PantsView;
 PantsView.prototype.testing = function() {
 	console.log('pantsView made test');
 };
-PantsView.prototype.slideOn = function(data) {
+PantsView.prototype.change = function(data) {
 	if (this.isOn){
-		this.pantsTransitionable.set([this.alignStartX, this.alignStartY], {duration: 3000});
+		this.pantsTransitionable.set([this.originStartX, this.originStartY], {
+			duration: 1000,
+			curve: Easing.inCubic
+		});
 		this.isOn = false;
 	} else {
-		this.pantsTransitionable.set([0.501, 0.432], { duration: 3000 });
+		this.pantsTransitionable.set([0.49, 0.2675], {
+			duration: 1000,
+			curve: Easing.inCubic
+		});
 		this.isOn = true;
 	}
 };

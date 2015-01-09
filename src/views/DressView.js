@@ -24,12 +24,12 @@ function DressView(data){
 	content: data['content']
 	});
 
-	this.alignStartX = data['align'][0];
-	this.alignStartY = data['align'][1];
-	// console.log(alignStartX, alignStartY);
+	this.originStartX = data['origin'][0];
+	this.originStartY = data['origin'][1];
+	// console.log(originStartX, originStartY);
 
-	this.dressTransitionable = new Transitionable([this.alignStartX, this.alignStartY]);
-	dressModifier.alignFrom(function() {
+	this.dressTransitionable = new Transitionable([this.originStartX, this.originStartY]);
+	dressModifier.originFrom(function() {
 		return this.dressTransitionable.get();
       	}.bind(this));
 
@@ -49,12 +49,18 @@ DressView.prototype.constructor = DressView;
 DressView.prototype.testing = function() {
 	console.log('dressView made it to the test');
 };
-DressView.prototype.slideOn = function(data) {
+DressView.prototype.change = function(data) {
 	if (this.isOn){
-		this.dressTransitionable.set([this.alignStartX, this.alignStartY], {duration: 3000});
+		this.dressTransitionable.set([this.originStartX, this.originStartY], {
+			duration: 1000,
+			curve: Easing.inCubic
+		});
 		this.isOn = false;
 	} else {
-		this.dressTransitionable.set([0.5, 0.27], { duration: 3000 });
+		this.dressTransitionable.set([0.5, 0.95], {
+			duration: 1000,
+			curve: Easing.inCubic
+		});
 		this.isOn = true;
 	}
 }

@@ -25,8 +25,9 @@ function ClothesView(){
   }
 
   this._eventInput.on('topViewClicked', function(view) {
-    view.slideOn();
-  });
+    view.change();
+    this._eventOutput.emit('topViewClicked');
+  }.bind(this));
 
   for (var key in data.pants) {
     var pantsView = new PantsView(data.pants[key], key);
@@ -36,8 +37,9 @@ function ClothesView(){
   }
 
   this._eventInput.on('pantsViewClicked', function(view) {
-    view.slideOn();
-  });
+    view.change();
+    this._eventOutput.emit('pantsViewClicked');
+  }.bind(this));
 
   for (var key in data.dresses) {
     var dressView = new DressView(data.dresses[key], key);
@@ -47,8 +49,9 @@ function ClothesView(){
   }
 
   this._eventInput.on('dressViewClicked', function(view) {
-    view.slideOn();
-  });
+    view.change();
+    this._eventOutput.emit('dressViewClicked');
+  }.bind(this));
 }
 
 ClothesView.prototype = Object.create(View.prototype);
