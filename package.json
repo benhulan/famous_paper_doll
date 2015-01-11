@@ -1,0 +1,41 @@
+{
+  "name": "famous-paper-doll",
+  "version": "0.1.0",
+  "description": "paper doll game built with famous",
+  "main": "src/index.js",
+  "browserify": {
+    "transform": [
+      "famousify",
+      "cssify",
+      "brfs"
+    ]
+  },
+  "scripts": {
+    "start": "npm run build && serve public/ -p 1337",
+    "start-dev": "npm run watch & serve public/ -p 1337",
+    "test": "npm run lint -s && npm run build",
+    "build": "browserify src/index.js | uglifyjs > public/bundle.js",
+    "watch": "watchify src/index.js -o public/bundle.js --debug --verbose",
+    "lint-eslint": "eslint src/",
+    "lint-jscs": "jscs src/",
+    "lint": "npm run lint-eslint && npm run lint-jscs"
+  },
+  "devDependencies": {
+    "browserify": "^7.0.0",
+    "eslint": "^0.10.0",
+    "jscs": "^1.7.3",
+    "serve": "^1.4.0",
+    "uglify-js": "^2.4.15",
+    "watchify": "^2.1.0"
+  },
+  "author": "Ben Hulan",
+  "license": "ISC",
+  "dependencies": {
+    "brfs": "^1.2.0",
+    "cssify": "^0.6.0",
+    "famous": "0.3.3",
+    "famous-polyfills": "^0.3.0",
+    "famousify": "^0.1.5",
+    "watchify": "^2.2.1"
+  }
+}
