@@ -1,7 +1,7 @@
 {
-  "name": "browserify-seed",
-  "version": "0.8.0",
-  "description": "seed for a browserified version of famous",
+  "name": "famous-paper-doll",
+  "version": "0.1.0",
+  "description": "paper doll game using a browserified version of famous",
   "main": "src/index.js",
   "browserify": {
     "transform": [
@@ -28,7 +28,7 @@
     "uglify-js": "^2.4.15",
     "watchify": "^2.1.0"
   },
-  "author": "TheAlphaNerd",
+  "author": "Ben Hulan",
   "license": "ISC",
   "dependencies": {
     "brfs": "^1.2.0",

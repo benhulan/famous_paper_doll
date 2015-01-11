@@ -11,6 +11,7 @@ var View = require('famous/core/View');
 var TopView = require('./TopView');
 var PantsView = require('./PantsView');
 var DressView = require('./DressView');
+var ShoeView = require('./ShoeView');
 
 function ClothesView(){
   View.apply(this, arguments);
@@ -52,6 +53,19 @@ function ClothesView(){
     view.change();
     this._eventOutput.emit('dressViewClicked');
   }.bind(this));
+
+ for (var key in data.shoes) {
+    var shoeView = new ShoeView(data.shoes[key], key);
+    this.subscribe(shoeView);
+    this.add(shoeView);
+    views[key] = shoeView;
+  }
+
+  this._eventInput.on('shoeViewClicked', function(view) {
+    view.change();
+    this._eventOutput.emit('shoeViewClicked');
+  }.bind(this));
+
 }
 
 ClothesView.prototype = Object.create(View.prototype);
