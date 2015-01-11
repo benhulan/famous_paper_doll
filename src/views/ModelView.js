@@ -21,6 +21,7 @@ function ModelView(){
     origin: [0.5, 0.5]
   });
   var model = new ImageSurface({
+<<<<<<< HEAD
     size: [122, 530],
     content: 'images/model2.svg'
   });
@@ -55,12 +56,19 @@ function ModelView(){
 
 // this.add(blushMod).add(blush);
 
+=======
+    size: [114, 530],
+    content: 'images/model.svg'
+  });
+  this.add(centerModelMod).add(model);
+>>>>>>> d5afcbaa60d5f396f88ba17d69ef47c889ce9d29
 }
 ModelView.prototype = Object.create(View.prototype);
 ModelView.prototype.constructor = ModelView;
 
 ModelView.DEFAULT_OPTIONS = {};
 
+<<<<<<< HEAD
 ModelView.prototype.dressed = function(){
    if (this.clothesIndex.tops > 1){
     this._eventOutput.emit('topViewClicked');
@@ -86,5 +94,7 @@ ModelView.prototype.dressed = function(){
  
 }
 
+=======
+>>>>>>> d5afcbaa60d5f396f88ba17d69ef47c889ce9d29
 module.exports = ModelView;
 

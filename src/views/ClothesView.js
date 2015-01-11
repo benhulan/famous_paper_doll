@@ -65,7 +65,6 @@ function ClothesView(){
     view.change();
     this._eventOutput.emit('shoeViewClicked');
   }.bind(this));
-
 }
 
 ClothesView.prototype = Object.create(View.prototype);
