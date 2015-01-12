@@ -52,13 +52,13 @@ DressView.prototype.testing = function() {
 DressView.prototype.change = function(data) {
 	if (this.isOn){
 		this.dressTransitionable.set([this.originStartX, this.originStartY], {
-			duration: 1000,
+			duration: 500,
 			curve: Easing.inCubic
 		});
 		this.isOn = false;
 	} else {
 		this.dressTransitionable.set([0.5, 0.95], {
-			duration: 1000,
+			duration: 500,
 			curve: Easing.inCubic
 		});
 		this.isOn = true;

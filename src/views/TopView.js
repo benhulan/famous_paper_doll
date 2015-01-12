@@ -52,13 +52,13 @@ TopView.prototype.testing = function() {
 TopView.prototype.change = function(data) {
 	if (this.isOn){
 		this.topTransitionable.set([this.originStartX, this.originStartY], {
-			duration: 1000,
+			duration: 500,
 			curve: Easing.inCubic
 		});
 		this.isOn = false;
 	} else {
 		this.topTransitionable.set([0.5, 1.45], {   
-			duration: 1000,
+			duration: 500,
 			curve: Easing.inCubic
 		});
 		this.isOn = true;

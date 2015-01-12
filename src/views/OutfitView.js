@@ -205,7 +205,7 @@ function OutfitView(){
   });
 
   blouse1.on('click', function(){
-      topTransitionable.set([0.5, 0.27], {duration: 5000 });
+      topTransitionable.set([0.5, 0.27], {duration: 500 });
   });
 
   var bottomTransitionable = new Transitionable([0.1, 0.5]);
@@ -214,7 +214,7 @@ function OutfitView(){
   });
 
   skirt1.on('click', function(){
-      bottomTransitionable.set([0.5, 0.434], { duration: 5000 });
+      bottomTransitionable.set([0.5, 0.434], { duration: 500 });
   });
 
 }
