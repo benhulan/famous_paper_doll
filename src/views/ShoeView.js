@@ -52,13 +52,13 @@ ShoeView.prototype.testing = function() {
 ShoeView.prototype.change = function(data) {
 	if (this.isOn){
 		this.shoeTransitionable.set([this.originStartX, this.originStartY], {
-			duration: 1000,
+			duration: 500,
 			curve: Easing.inCubic
 		});
 		this.isOn = false;
 	} else {
 		this.shoeTransitionable.set([0.49, -1.1], {   
-			duration: 1000,
+			duration: 500,
 			curve: Easing.inCubic
 		});
 		this.isOn = true;

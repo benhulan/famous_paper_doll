@@ -50,13 +50,13 @@ PantsView.prototype.testing = function() {
 PantsView.prototype.change = function(data) {
 	if (this.isOn){
 		this.pantsTransitionable.set([this.originStartX, this.originStartY], {
-			duration: 1000,
+			duration: 500,
 			curve: Easing.inCubic
 		});
 		this.isOn = false;
 	} else {
 		this.pantsTransitionable.set([0.49, 0.2675], {
-			duration: 1000,
+			duration: 500,
 			curve: Easing.inCubic
 		});
 		this.isOn = true;
